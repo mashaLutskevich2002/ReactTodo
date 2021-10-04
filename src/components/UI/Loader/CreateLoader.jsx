@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from "./Loader.module.css";
+import classes from "./CreateLoader.module.css";
 
-const Loader = () => {
+const CreateLoader = () => {
     return (
         <div className={classes.loader}>
 
@@ -9,4 +9,4 @@ const Loader = () => {
     );
 };
 
-export default Loader;
+export default CreateLoader;

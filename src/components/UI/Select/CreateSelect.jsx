@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from "./MySelect.module.css";
+import classes from "./CreateSelect.module.css";
 
-const MySelect = ({options, defaultValue, value, onChange}) => {
+const CreateSelect = ({options, defaultValue, value, onChange}) => {
     return (
         <div style={{marginTop:'20px'}}>
             <select className={classes.select} value={value} onChange={e=> onChange(e.target.value)}>
@@ -14,4 +14,4 @@ const MySelect = ({options, defaultValue, value, onChange}) => {
     );
 };
 
-export default MySelect;
+export default CreateSelect;

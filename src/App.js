@@ -3,14 +3,14 @@ import './styles/App.css'
 import PostList from "./components/PostList";
 import Form from "./components/Form";
 import PostFilter from "./components/PostFilter";
-import MyModal from "./components/UI/Modal/MyModal";
-import MyButton from "./components/UI/Button/MyButton";
+import CreateModal from "./components/UI/Modal/CreateModal";
+import CreatePostButton from "./components/UI/Button/CreatePostButton";
 import {usePosts} from "./hooks/usePost";
 import PostService from "./API/PostService";
-import Loader from "./components/UI/Loader/Loader";
+import CreateLoader from "./components/UI/Loader/CreateLoader";
 import {useFetching} from "./hooks/useFetching";
 import {getPageCount, getPagesArray} from "./utils/pages";
-import Pagination from "./components/UI/Pagination/Pagination";
+import CreatePagination from "./components/UI/Pagination/CreatePagination";
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -20,7 +20,6 @@ function App() {
     const [totalPages, setTotalPages] = useState(0)
     const [limit, setLimit] = useState(10)
     const [page, setPage] = useState(1)
-
     const [fetchPost, isPostLoading, postError] = useFetching(async ()=>{
         const response = await PostService.getAll(limit,page);
         setPosts(response.data)
@@ -28,16 +27,13 @@ function App() {
         setTotalPages(getPageCount(totalCount,limit))
     })
 
-
     useEffect(()=>{
         fetchPost()
     }, [page])
 
     const changePage = (page) =>{
       setPage(page)
-
     }
-
 
     const createPost = (newPost) => {
         setPosts([...posts, newPost])
@@ -50,11 +46,10 @@ function App() {
 
   return (
     <div className="App">
-    <button onClick={fetchPost}> GET POSTS</button>
-        <MyButton onClick = { () => setModal(true)}> Создать пост </MyButton>
-        <MyModal visible={modal} setVisible={setModal}>
+        <CreatePostButton onClick = { () => setModal(true)}> Создать пост </CreatePostButton>
+        <CreateModal visible={modal} setVisible={setModal}>
             <Form create={createPost}/>
-        </MyModal>
+        </CreateModal>
 
         <PostFilter filter={filter} setFilter={setFilter}/>
 
@@ -63,12 +58,14 @@ function App() {
 
         }
         { isPostLoading
-            ? <Loader/>
-            :  <PostList remove={removePost} posts={sortedAndSearch} title={'список постов 1'}/>
+            ? <CreateLoader/>
+            :  (
+                <React.Fragment>
+                    <PostList remove={removePost} posts={sortedAndSearch} title={'список постов 1'}/>
+                    <CreatePagination totalPages={totalPages} changePage={changePage}/>
+                </React.Fragment>
+                )
         }
-
-       <Pagination totalPages={totalPages} changePage={changePage}/>
-
     </div>
   );
 }

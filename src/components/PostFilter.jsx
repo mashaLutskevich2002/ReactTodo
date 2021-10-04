@@ -1,16 +1,16 @@
 import React from 'react';
-import MyInput from "./UI/Input/MyInput";
-import MySelect from "./UI/Select/MySelect";
+import CreateInput from "./UI/Input/CreateInput";
+import CreateSelect from "./UI/Select/CreateSelect";
 
 const PostFilter = ({filter, setFilter}) => {
     return (
         <div>
-            <MyInput
+            <CreateInput
                 value = {filter.query}
                 onChange={e => setFilter({...filter,query: e.target.value})}
                 style={{marginTop:'20px'}}
                 placeholder='Поиск' />
-            <MySelect
+            <CreateSelect
                 value={filter.sort }
                 onChange={selectSort => setFilter({...filter, sort: selectSort})}
                 defaultValue='Сортировка'

@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './MyButton.module.css'
+import classes from './CreatePostButton.module.css'
 
-const MyButton = ({children, onClick}) => {
+const CreatePostButton = ({children, onClick}) => {
     return (
         <div >
             <button className={classes.but} onClick={onClick}> {children}  </button>
@@ -9,4 +9,4 @@ const MyButton = ({children, onClick}) => {
     );
 };
 
-export default MyButton;
+export default CreatePostButton;

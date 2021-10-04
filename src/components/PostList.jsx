@@ -3,11 +3,9 @@ import Post from "./Post";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 
 const PostList = ({posts, title, remove}) => {
-
     if(!posts.length){
        return <h1> Постов на данный момент нету </h1>
     }
-
     return (
         <div>
             <h1 style={{textAlign:'center'}}> {title} </h1>
@@ -23,7 +21,6 @@ const PostList = ({posts, title, remove}) => {
 
                     </CSSTransition>
                 )}
-
             </TransitionGroup>
 
         </div>

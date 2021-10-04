@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from "./MyModal.module.css";
+import classes from "./CreateModal.module.css";
 
-const MyModal = ({children, visible, setVisible}) => {
+const CreateModal = ({children, visible, setVisible}) => {
     const rootClasses = [classes.myModule]
     if(visible){
         rootClasses.push(classes.active)
@@ -17,4 +17,4 @@ const MyModal = ({children, visible, setVisible}) => {
     );
 };
 
-export default MyModal;
+export default CreateModal;

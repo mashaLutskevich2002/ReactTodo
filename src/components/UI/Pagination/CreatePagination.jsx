@@ -1,18 +1,18 @@
 import React from 'react';
-import MyButton from "../Button/MyButton";
+import CreatePostButton from "../Button/CreatePostButton";
 import {getPagesArray} from "../../../utils/pages";
 
-const Pagination = ({totalPages, page, changePage}) => {
+const CreatePagination = ({totalPages, page, changePage}) => {
     let pageArray= getPagesArray(totalPages)
     return (
 
             <div style={{display:"flex", marginBottom:'20px'}}>
                 { pageArray.map(p=>
-                    <MyButton key={p} onClick={()=> changePage(p)}> {p} </MyButton>
+                    <CreatePostButton key={p} onClick={()=> changePage(p)}> {p} </CreatePostButton>
                 )}
             </div>
 
     );
 };
 
-export default Pagination;
+export default CreatePagination;
