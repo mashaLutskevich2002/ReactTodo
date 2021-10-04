@@ -1,10 +1,12 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-.App{
+:root{
+    background: #F2F2F2;
+}
+.App {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -13,54 +15,61 @@
     width: 100%;
 }
 
-.post{
+.post {
+    background: white;
     height: 100px;
     border: solid teal;
     width: 800px;
-
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin: 10px 0;
 }
-
-.post__content{
+.post:hover{
+    border: dashed darkred;
+}
+ .post__content {
     width: 70%;
     display: flex;
     flex-direction: column;
     text-align: center;
-
 }
 
-.post__btn{
+.post__btn {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.post__btn>button{
+
+.post__btn>button {
+    margin-top: 10px;
     width: 60px;
-    background-color: lightblue;
+    background-color: #CECEF6;
     color: black;
 }
-.post__btn>button:hover{
+
+.post__btn>button:hover {
     width: 80px;
 }
 
-.form{
+.form {
     display: flex;
-
-
 }
+
 .post-enter {
     transform: translateX(-350px);
 }
+
 .post-enter-active {
     transform: translateX(0px);
     transition: opacity 300ms, transform 300ms;
 }
+
 .post-exit {
     opacity: 1;
 }
+
 .post-exit-active {
     transform: translateX(-350px);
     transition: opacity 300ms, transform 300ms;
@@ -69,14 +78,40 @@
 .but-enter {
     transform: translateX(-350px);
 }
+
 .but-enter-active {
     transform: translateX(0px);
     transition: opacity 300ms, transform 300ms;
 }
+
 .but-exit {
     opacity: 1;
 }
+
 .but-exit-active {
     transform: translateX(-350px);
     transition: opacity 300ms, transform 300ms;
+}
+
+.post__content_mainBlock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.post__content__posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 80px;
+    text-align: center;
+    border: 1px solid;
+}
+
+.post__content__posts_comment {
+    height: auto;
 }
