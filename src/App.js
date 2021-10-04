@@ -61,7 +61,7 @@ function App() {
             ? <CreateLoader/>
             :  (
                 <React.Fragment>
-                    <PostList remove={removePost} posts={sortedAndSearch} title={'список постов 1'}/>
+                    <PostList remove={removePost} posts={sortedAndSearch} title={`список постов ${page}`}/>
                     <CreatePagination totalPages={totalPages} changePage={changePage}/>
                 </React.Fragment>
                 )
