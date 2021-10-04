@@ -1,0 +1,11 @@
+.but{
+    width: 120px;
+    height: 25px;
+    background-color: wheat;
+    border-style: dashed;
+}
+.but:hover{
+    width: 110px;
+    height: 30px;
+    border-radius: 10px;
+}

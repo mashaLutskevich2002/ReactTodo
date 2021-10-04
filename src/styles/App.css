@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.post{
+    height: 100px;
+    border: solid teal;
+    width: 800px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.post__content{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.post__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post__btn>button{
+    width: 60px;
+    background-color: lightblue;
+    color: black;
+}
+.post__btn>button:hover{
+    width: 80px;
+}
+
+.form{
+    display: flex;
+
+
+}
+.post-enter {
+    transform: translateX(-350px);
+}
+.post-enter-active {
+    transform: translateX(0px);
+    transition: opacity 300ms, transform 300ms;
+}
+.post-exit {
+    opacity: 1;
+}
+.post-exit-active {
+    transform: translateX(-350px);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.but-enter {
+    transform: translateX(-350px);
+}
+.but-enter-active {
+    transform: translateX(0px);
+    transition: opacity 300ms, transform 300ms;
+}
+.but-exit {
+    opacity: 1;
+}
+.but-exit-active {
+    transform: translateX(-350px);
+    transition: opacity 300ms, transform 300ms;
+}
