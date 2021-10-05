@@ -1,10 +1,9 @@
 import React from 'react';
+import CreateAbout from "../components/UI/About/CreateAbout";
 
 const About = () => {
     return (
-       <h1 style={{textAlign:'center'}}>
-           Это веб-приложение для постов. Перейдите на страничку "Посты"
-       </h1>
+     <CreateAbout/>
     );
 };
 
